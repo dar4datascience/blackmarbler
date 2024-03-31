@@ -379,8 +379,6 @@ extract_daily_data <- function(download_file_path,
 
   # Apply Quality Flags to H5 data ------------------------------------------
 
-
-
   # Check if there are quality flags to remove and if the variable is applicable
   if (length(quality_flags_to_remove) > 0 && blackmarble_variable %in% c(
     "DNB_BRDF-Corrected_NTL",
@@ -770,9 +768,50 @@ read_black_marble_csv <- function(year, day, product_id) {
   print("adding delay to avoid overloading the server")
   Sys.sleep(0.1) # Adding a small delay to avoid overloading the server
 
-  # should we just download the tiles df data?
-
   return(df_out)
+}
+
+#' @export
+fetch_vnp46_filenames_from_laads <- function(year, day, product_id) {
+  vnp46_h5_tile_names <- tryCatch(
+    {
+      # to start an in-memory database
+      quack_conn <- duckdb::dbConnect(
+        duckdb::duckdb(),
+        dbdir = ":memory:"
+        )
+
+      # load httpfs extension
+      duckdb::dbSendQuery(quack_conn,
+                        "INSTALL httpfs;
+                        LOAD httpfs;")
+
+      on.exit(duckdb::dbDisconnect(quack_conn))
+
+      laads_url <- glue::glue("https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/5000/{product_id}/{year}/{day}.csv")
+
+      dplyr::tbl(quack_conn,
+                 glue::glue("read_csv('{laads_url}', auto_detect = true)")
+                 ) |>
+        dplyr::mutate(
+          year = year,
+          day = day
+        ) |>
+        dplyr::collect()
+
+    },
+    error = function(e) {
+      warning(paste0("Error with year: ", year, "; day: ", day))
+      data.frame(NULL)
+    }
+  )
+
+  # Add a small delay to avoid overloading the server
+  cli::cli_alert_info("adding delay to avoid overloading the server")
+
+  Sys.sleep(0.1) # Adding a small delay to avoid overloading the server
+
+  return(vnp46_h5_tile_names)
 }
 
 #' Create Black Marble Dataset DataFrame
@@ -854,6 +893,7 @@ create_black_marble_dataset_df <- function(product_id,
 
   # Create data
   # this is the slow operation
+  # we can potentially parallelize this via duckdb and requesting all in one go. each request hits a different url
   files_df <- purrr::map2(
     param_df$years,
     param_df$days,
