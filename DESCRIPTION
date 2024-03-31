@@ -20,6 +20,8 @@ Imports:
   purrr,
   lubridate,
   tidyr,
+  duckdb,
+  glue,
   sf,
   curl,
   exactextractr,
