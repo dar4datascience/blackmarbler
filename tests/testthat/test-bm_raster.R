@@ -1,4 +1,4 @@
-# Test for daily data VNP46A1
+# Test for daily data VNP46A1 (this fails)
 test_that("Test raster for VNP46A1 works", {
   # Define bearer token
   bearer <- Sys.getenv("BEARER_NASA_TOKEN")
