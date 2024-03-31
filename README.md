@@ -14,6 +14,7 @@
 ## Next steps
 
  - [ ] performance tuning
+ - [ ] quarto documentation
  - [ ] migrate to cli package
  - [ ] let user know how many tiles are gonna be process cause it timely
  - [ ] More tests (priority)
