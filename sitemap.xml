@@ -1,23 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dar4datascience.github.io/blackmarbler/assess-quality.html</loc>
-    <lastmod>2024-04-05T00:58:59.770Z</lastmod>
+    <loc>/404.html</loc>
   </url>
   <url>
-    <loc>https://dar4datascience.github.io/blackmarbler/index.html</loc>
-    <lastmod>2024-04-05T00:58:59.774Z</lastmod>
+    <loc>/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://dar4datascience.github.io/blackmarbler/testing_webr.html</loc>
-    <lastmod>2024-04-05T00:58:59.774Z</lastmod>
+    <loc>/authors.html</loc>
   </url>
   <url>
-    <loc>https://dar4datascience.github.io/blackmarbler/about.html</loc>
-    <lastmod>2024-04-05T00:58:59.770Z</lastmod>
+    <loc>/index.html</loc>
   </url>
   <url>
-    <loc>https://dar4datascience.github.io/blackmarbler/benchmark_reading_laads_remote_csv.html</loc>
-    <lastmod>2024-04-05T00:58:59.770Z</lastmod>
+    <loc>/reference/add_n_pixels.html</loc>
+  </url>
+  <url>
+    <loc>/reference/apply_scaling_factor_to_viirs_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/bind_extracted_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/black_marble_tiles_sf.html</loc>
+  </url>
+  <url>
+    <loc>/reference/bm_extract.html</loc>
+  </url>
+  <url>
+    <loc>/reference/bm_raster.html</loc>
+  </url>
+  <url>
+    <loc>/reference/clean_raster_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/convert_h5_to_raster.html</loc>
+  </url>
+  <url>
+    <loc>/reference/count_n_obs.html</loc>
+  </url>
+  <url>
+    <loc>/reference/create_black_marble_dataset_df.html</loc>
+  </url>
+  <url>
+    <loc>/reference/create_raster_from_data_metadata.html</loc>
+  </url>
+  <url>
+    <loc>/reference/custom_inform.html</loc>
+  </url>
+  <url>
+    <loc>/reference/define_blackmarble_variable.html</loc>
+  </url>
+  <url>
+    <loc>/reference/define_raster_name.html</loc>
+  </url>
+  <url>
+    <loc>/reference/download_and_convert_raster.html</loc>
+  </url>
+  <url>
+    <loc>/reference/download_h5_viirs_sat_image.html</loc>
+  </url>
+  <url>
+    <loc>/reference/extract_and_process.html</loc>
+  </url>
+  <url>
+    <loc>/reference/extract_bounding_box.html</loc>
+  </url>
+  <url>
+    <loc>/reference/extract_daily_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/extract_data_and_metadata_from_hdf5.html</loc>
+  </url>
+  <url>
+    <loc>/reference/extract_monthly_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/intersect_bm_tiles.html</loc>
+  </url>
+  <url>
+    <loc>/reference/julian_to_month.html</loc>
+  </url>
+  <url>
+    <loc>/reference/map_black_marble_tiles.html</loc>
+  </url>
+  <url>
+    <loc>/reference/process_tiles.html</loc>
+  </url>
+  <url>
+    <loc>/reference/read_black_marble_csv.html</loc>
+  </url>
+  <url>
+    <loc>/reference/remove_fill_value_from_satellite_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/retrieve_and_process_nightlight_data.html</loc>
   </url>
 </urlset>
